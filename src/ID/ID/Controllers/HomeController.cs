@@ -25,7 +25,7 @@ namespace ID.Controllers
 
         public IActionResult Privacy()
         {
-            return View();
+            return StatusCode(401);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
