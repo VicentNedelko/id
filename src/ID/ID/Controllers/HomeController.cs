@@ -25,7 +25,11 @@ namespace ID.Controllers
 
         public IActionResult Privacy()
         {
-            return StatusCode(401);
+            return View();
+        }
+        public IActionResult Cvv()
+        {
+            return View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

@@ -1,3 +1,4 @@
+using ID.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
@@ -13,6 +14,7 @@ namespace ID
     {
         public static void Main(string[] args)
         {
+            ApplicationContext db = new ApplicationContext();
             CreateHostBuilder(args).Build().Run();
         }
 
