@@ -16,7 +16,6 @@ namespace ID.Controllers
         [HttpPost]
         public void Index(string nikname, string mail)
         {
-
         }
 
     }
