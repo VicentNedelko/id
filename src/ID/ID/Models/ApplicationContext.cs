@@ -9,21 +9,13 @@ namespace ID.Models
 {
     public class ApplicationContext : DbContext
     {
-        public DbSet<User> Users { get; set; }
+        public DbSet<User> UserReg { get; set; }
         public ApplicationContext()
         {
-            Database.EnsureDeleted();
-            Database.EnsureCreated();
         }
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\mssqllocaldb;Database=RegisteredUsers;Trusted_Connection=True;");
-        }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<User>()
-                .HasKey(p => p.Id);
+            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=UsersR;Trusted_Connection=True;");
         }
     }
 }
