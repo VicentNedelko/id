@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ID.Models;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,12 @@ namespace ID.Controllers
         [HttpPost]
         public void Index(string nikname, string mail)
         {
+            User user = new User
+            {
+                Name = nikname,
+                Mail = mail,
+            };
+
         }
 
     }
