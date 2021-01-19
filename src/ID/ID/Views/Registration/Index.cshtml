@@ -3,15 +3,22 @@
 *@
 @{
 }
-<form id="regForm" action="Registration/Index" method="post">
-    <div>
-        <label for="nikname">Name : </label>
-        <input type="text" name="nikname" placeholder="RegName" />
-        <br /><br/>
-        <label for="mail">Email : </label>
-        <input type="email" name="mail" placeholder="e-mail" />
-        <br /><br/>
-        <input type="submit" name="submitButton" placeholder="Send" />
+@model IEnumerable<ID.Models.User>
 
-    </div>
+
+
+<form id="regForm" action="Registration/Index" method="get">
+    <a asp-controller="Registration" asp-action="Reg">Create new User</a>
+    <table class="table">
+        <tr><td>Name</td><td>Mail</td></tr>
+        @if(Model.Count() != 0)
+        {
+            @foreach(var item in Model)
+            {
+                <tr><td>@item.Name</td><td>@item.Mail</td></tr>
+            }
+            
+        }
+    </table>
 </form>
+

@@ -10,12 +10,11 @@ namespace ID.Models
     public class ApplicationContext : DbContext
     {
         public DbSet<User> UserReg { get; set; }
-        public ApplicationContext()
+        public ApplicationContext(DbContextOptions<ApplicationContext> options)
+            : base(options)
         {
+            Database.EnsureCreated();   // создаем базу данных при первом обращении
         }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("Server=(localdb)\\mssqllocaldb;Database=UsersR;Trusted_Connection=True;");
-        }
+
     }
 }
